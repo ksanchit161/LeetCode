@@ -1,7 +1,7 @@
 1class Solution {
 2    static{
 3        int []numbers={5,5,5,5,20,10};
-4        for(int i=0;i<=100;i++){
+4        for(int i=0;i<=1000;i++){
 5            lemonadeChange(numbers);
 6        }
 7    }
