@@ -19,7 +19,8 @@
 19            if(arr[i]==1)mid=ch;
 20        }
 21        if(mid!='\0') sb1.append(mid);
-22        return sb1.toString()+sb2.reverse().toString();
-23
-24    }
-25}
+22        sb1.append(sb2.reverse().toString());
+23        return sb1.toString();
+24
+25    }
+26}
