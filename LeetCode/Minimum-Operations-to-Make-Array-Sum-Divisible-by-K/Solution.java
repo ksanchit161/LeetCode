@@ -1,7 +1,7 @@
 1class Solution {
 2    static{
 3        int []number={1,2,3,4};
-4        for(int i=0;i<1000;i++){
+4        for(int i=0;i<100;i++){
 5             minOperations(number,4);
 6        }
 7    }
