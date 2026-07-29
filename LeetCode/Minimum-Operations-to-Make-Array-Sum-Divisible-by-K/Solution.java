@@ -1,15 +1,11 @@
 1class Solution {
-2    static{
-3        int []number={1,2,3,4};
-4        for(int i=0;i<100;i++){
-5             minOperations(number,2);
-6        }
-7    }
-8    public static int minOperations(int[] nums, int k) {
-9        int sum=0;
-10        for(int ele:nums){
-11            sum+=ele;
-12        }
-13        return sum%k;
-14    }
-15}
+2    public int minOperations(int[] nums, int k) {
+3        int sum = 0;
+4
+5        for (int num : nums) {
+6            sum += num;
+7        }
+8
+9        return sum % k;
+10    }
+11}
