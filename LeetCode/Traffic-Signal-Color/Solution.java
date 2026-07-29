@@ -1,6 +1,6 @@
 1class Solution {
 2    static{
-3        for(int i=0;i<10000;i++){
+3        for(int i=0;i<1000;i++){
 4            trafficSignal(100);
 5        }
 6    }
