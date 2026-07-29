@@ -1,0 +1,24 @@
+1class Solution {
+2
+3    public String smallestPalindrome(String s) {
+4        int partition = s.length() / 2;
+5        int[] bucket = new int[26];
+6
+7        for (int i = 0; i < partition; i++) {
+8            bucket[s.charAt(i) - 'a'] += 1;
+9        }
+10
+11        StringBuilder left = new StringBuilder();
+12        for (int i = 0; i < 26; i++) {
+13            if (bucket[i] > 0) {
+14                left.append(String.valueOf((char) (i + 'a')).repeat(bucket[i]));
+15            }
+16        }
+17
+18        String mid =
+19            s.length() % 2 != 0 ? String.valueOf(s.charAt(partition)) : "";
+20        String right = new StringBuilder(left).reverse().toString();
+21
+22        return left.toString() + mid + right;
+23    }
+24}
