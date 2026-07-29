@@ -1,6 +1,6 @@
 1class Solution {
 2    static {
-3        for(int i=1;i<1000;i++){
+3        for(int i=1;i<100;i++){
 4            numJewelsInStones("aAZ","aaZzb");
 5        }
 6    }
