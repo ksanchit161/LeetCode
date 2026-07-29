@@ -1,17 +1,22 @@
 1class Solution {
-2    public int peakIndexInMountainArray(int[] arr) {
-3        int start=0;
-4        int end=arr.length-1;
-5        int ans=-1;
-6     
-7        while(start<=end){
-8            int mid = start+(end-start)/2;
-9            if(arr[mid]<arr[mid+1]) start=mid+1;
-10            else {
-11                ans=mid;
-12                end=mid-1;
-13            }
-14        }
-15        return ans;
-16    }
-17}
+2public:
+3    int peakIndexInMountainArray(vector<int>& arr) {
+4        int s = 0;
+5        int e = arr.size() - 1;
+6
+7        while (s < e) {
+8            int mid = s + (e - s) / 2;
+9
+10            if (arr[mid] < arr[mid + 1]) {
+11                // We are on increasing slope
+12                s = mid + 1;
+13            } else {
+14                // We are on decreasing slope
+15                e = mid;
+16            }
+17        }
+18
+19        return s;  // or return e;
+20    }
+21};
+22
