@@ -1,8 +1,8 @@
 1class Solution {
 2    static{
 3        int []number={1,2,3,4};
-4        for(int i=0;i<10000;i++){
-5             minOperations(number,4);
+4        for(int i=0;i<100;i++){
+5             minOperations(number,2);
 6        }
 7    }
 8    public static int minOperations(int[] nums, int k) {
