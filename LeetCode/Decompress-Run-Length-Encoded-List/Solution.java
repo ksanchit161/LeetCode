@@ -1,6 +1,6 @@
 1class Solution {
 2    public int[] decompressRLElist(int[] nums) {
-3        int []result=new int [10001];
+3        int []result=new int [10000];
 4        int k=0;
 5        for(int i=0;i<nums.length;i+=2){
 6            int freq=nums[i];
