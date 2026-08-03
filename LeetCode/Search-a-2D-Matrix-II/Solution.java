@@ -6,7 +6,7 @@
 6            {3, 6, 25}
 7        };
 8        Solution obj = new Solution();
-9        for (int i = 0; i <= 100; i++) {
+9        for (int i = 0; i <= 1000; i++) {
 10            obj.searchMatrix(mat, 15);
 11        }
 12    }
