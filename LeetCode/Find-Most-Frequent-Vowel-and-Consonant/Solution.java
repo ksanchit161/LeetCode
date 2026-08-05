@@ -5,11 +5,11 @@
 5        char brr[]=s.toCharArray();
 6        int arr[]=new int [26];
 7        for(int i=0;i<brr.length;i++){
-8            int idx=(int) (brr[i]-'a');
-9            char ch=brr[i];
-10            arr[idx]++;
-11            if(arr[idx]>max1 && "aeiouAEIOU".indexOf(ch) == -1) max1=arr[idx];
-12            else if(arr[idx]>max2 && "aeiouAEIOU".indexOf(ch) != -1) max2=arr[idx];
+8          arr[brr[i]-'a']++;
+9        }
+10        for(int i=0;i<26;i++){
+11            if(i==0 || i==4 || i==8 || i==14 || i==20) max1=Math.max(max1,arr[i]);
+12            else max2=Math.max(max2,arr[i]);
 13        }
 14        return max1+max2;
 15    }
