@@ -3,7 +3,7 @@
 3        int count=0;
 4        int res[]=new int[nums.length];
 5        for(int ele:nums){
-6            if(ele%2==0) count++;
+6            if((ele&1)==0) count++;
 7        }
 8        for(int i=count;i<nums.length;i++){
 9            res[i]=1;
