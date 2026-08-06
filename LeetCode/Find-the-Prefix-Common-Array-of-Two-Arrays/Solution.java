@@ -1,20 +1,14 @@
 1class Solution {
-2    public int compare(int[]A,int []B){
-3        int count=0;
-4        for(int i=1;i<51;i++){
-5            if(A[i]==B[i] && A[i]>0) count++;
-6        }
-7        return count;
-8    }
-9    public int[] findThePrefixCommonArray(int[] A, int[] B) {
-10        int result[]=new int [A.length];
-11        int count1[]=new int [51];
-12        int count2[]=new int [51];
-13        for(int i=0;i<A.length;i++){
-14            count1[A[i]]++;
-15            count2[B[i]]++;
-16            result[i]=compare(count1,count2);
-17        }
-18        return result;
-19    }
-20}
+2    public int[] findThePrefixCommonArray(int[] A, int[] B) {
+3        int result[]=new int [A.length];
+4        int count[]=new int [51];
+5        int common=0;
+6        for(int i=0;i<A.length;i++){
+7            if(++count[A[i]]==2) common++; 
+8            if(++count[B[i]]==2) common++;
+9            result[i]=common;
+10        }
+11        return result;
+12    }
+13}
+14/* first increment then check we check 2 because it is permutation so , it will occur once in each array , max count=2 */
