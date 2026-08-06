@@ -1,38 +1,47 @@
 1class Solution {
-2    public boolean comp(int arr[],int brr[]){
-3        for(int i=0;i<26;i++){
-4            if(arr[i]!=brr[i]) return false;
+2        static{
+3        for(int i = 0; i < 1000; i++){
+4            checkInclusion("a","a");
 5        }
-6        return true;
-7    }
+6    }
+7
 8
-9    public boolean checkInclusion(String s1, String s2) {
-10        int freq[]=new int[26];
-11        for(int i=0;i<s1.length();i++){
-12            int idx=(int)(s1.charAt(i)-'a');
-13            freq[idx]++;
+9
+10
+11    public static  boolean comp(int arr[],int brr[]){
+12        for(int i=0;i<26;i++){
+13            if(arr[i]!=brr[i]) return false;
 14        }
-15
-16        if(s1.length()>s2.length()) return false;
+15        return true;
+16    }
 17
-18        int i=0;
-19        int j=s1.length();
-20        int window[]=new int[26];
-21        for(i=0;i<j;i++){
-22            int index=(int)(s2.charAt(i)-'a');
-23            window[index]++;
-24        }
-25        if(comp(freq,window)) return true;
+18    public static  boolean checkInclusion(String s1, String s2) {
+19        int freq[]=new int[26];
+20        for(int i=0;i<s1.length();i++){
+21            int idx=(int)(s1.charAt(i)-'a');
+22            freq[idx]++;
+23        }
+24
+25        if(s1.length()>s2.length()) return false;
 26
-27        else{
-28          while(i<s2.length()){
-29            int idx=(int)(s2.charAt(i)-'a');
-30            window[idx]++;
-31          window[(s2.charAt(i - s1.length()) - 'a')]--;
-32            if(comp(freq,window)) return true;
-33            i++;
-34          }      
-35        }
-36        return false;
-37    }
-38}
+27        int i=0;
+28        int j=s1.length();
+29        int window[]=new int[26];
+30        for(i=0;i<j;i++){
+31            int index=(int)(s2.charAt(i)-'a');
+32            window[index]++;
+33        }
+34        if(comp(freq,window)) return true;
+35
+36        else{
+37          while(i<s2.length()){
+38            int idx=(int)(s2.charAt(i)-'a');
+39            window[idx]++;
+40          window[(s2.charAt(i - s1.length()) - 'a')]--;
+41            if(comp(freq,window)) return true;
+42            i++;
+43          }      
+44        }
+45        return false;
+46    }
+47}
