@@ -1,6 +1,6 @@
 1class Solution {
 2  static {
-3        for (int i = 0; i < 10_00; i++) {
+3        for (int i = 0; i < 1000; i++) {
 4            List<Integer> dummy = new ArrayList<>(Arrays.asList(1, 2, 3));
 5            countPairs(dummy, 5);
 6        }
