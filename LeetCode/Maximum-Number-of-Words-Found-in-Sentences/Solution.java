@@ -1,14 +1,16 @@
 1class Solution {
-2    public int mostWordsFound(String[] sentences) {
-3        int max=-1;
-4        for(int i=0;i<sentences.length;i++){
-5            int count=1;
-6            String sentence=sentences[i];
-7            for(int j=0;j<sentence.length();j++){
-8                if(sentence.charAt(j)==' ') count++;
-9            }
-10            max=Math.max(max,count);
-11        }
-12        return max;
-13    }
-14}
+2    public int count_word(String s){
+3        int count=1;
+4        for(int j=0;j<s.length();j++){
+5            if(s.charAt(j)==' ') count++;
+6        }
+7        return count;
+8    }
+9    public int mostWordsFound(String[] sentences) {
+10        int max=-1;
+11        for(int i=0;i<sentences.length;i++){
+12            max=Math.max(max,count_word(sentences[i]));
+13        }
+14        return max;
+15    }
+16}
