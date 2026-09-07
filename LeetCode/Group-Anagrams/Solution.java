@@ -17,9 +17,9 @@
 17}
 18    public List<List<String>> groupAnagrams(String[] strs) {
 19        HashMap<String,List<String>> map=new HashMap<>();
-20        for(int i=0;i<strs.length;i++){
-21            String temp=strs[i];
-22            char[] ca = strs[i].toCharArray();                 
+20        for(String s: strs){
+21            String temp=s;
+22            char[] ca = s.toCharArray();                 
 23            String sorted = sort(ca);
 24            map.computeIfAbsent(sorted, k -> new ArrayList<>()).add(temp);
 25        }
