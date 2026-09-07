@@ -18,11 +18,10 @@
 18    public List<List<String>> groupAnagrams(String[] strs) {
 19        HashMap<String,List<String>> map=new HashMap<>();
 20        for(String s: strs){
-21            String temp=s;
-22            char[] ca = s.toCharArray();                 
-23            String sorted = sort(ca);
-24            map.computeIfAbsent(sorted, k -> new ArrayList<>()).add(temp);
-25        }
-26        return new ArrayList<>(map.values());
-27    }
-28}
+21            char[] ca = s.toCharArray();                 
+22            String sorted = sort(ca);
+23            map.computeIfAbsent(sorted, k -> new ArrayList<>()).add(s);
+24        }
+25        return new ArrayList<>(map.values());
+26    }
+27}
