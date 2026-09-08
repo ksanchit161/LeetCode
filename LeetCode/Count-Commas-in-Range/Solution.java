@@ -1,5 +1,8 @@
 1class Solution {
 2    public int countCommas(int n) {
-3       return Math.max(0,n-999);
-4    }
-5}
+3       if(n<1000){
+4            return 0;
+5        }
+6        return n - 999;
+7    }
+8}
