@@ -1,20 +1,19 @@
 1class Solution {
 2    public int[] rearrangeArray(int[] nums) {
-3        int []pos=new int[nums.length/2];
-4        int []neg=new int[nums.length/2];
-5        int i=0;
-6        int j=0;
-7        for(int ele:nums){
-8            if(ele>0) pos[i++]=ele;
-9            else neg[j++]=ele;
-10        }
-11        int k=0;
-12        i=0;
-13        j=0;
-14        for(int l=0;l<(nums.length/2);l++){
-15            nums[k++]=pos[i++];
-16            nums[k++]=neg[j++];
-17        }
-18        return nums;
-19    }
-20}
+3        int[] ans = new int[nums.length];
+4        int posIndex = 0; 
+5        int negIndex = 1; 
+6        
+7        for (int i = 0; i < nums.length; i++) {
+8            if (nums[i] > 0) {
+9                ans[posIndex] = nums[i];
+10                posIndex += 2;
+11            } else {
+12                ans[negIndex] = nums[i];
+13                negIndex += 2;
+14            }
+15        }
+16        
+17        return ans;
+18    }
+19}
