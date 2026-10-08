@@ -1,13 +1,26 @@
 1class Solution {
 2    public boolean isValid(String s) {
 3        Stack<Character> stack=new Stack<>();
-4        for(char ch: s.toCharArray()){
-5            if(ch=='(' || ch=='[' || ch=='{') stack.push(ch);
-6            else if(stack.size()>0 && ch==')' && stack.peek()=='(') stack.pop();
-7            else if(stack.size()>0 && ch==']' && stack.peek()=='[') stack.pop();
-8            else if(stack.size()>0 && ch=='}' && stack.peek()=='{') stack.pop();
-9            else return false;
-10        }
-11        return stack.size()==0;
-12    }
-13}
+4        int size=0;
+5        for(char ch: s.toCharArray()){
+6            if(ch=='(' || ch=='[' || ch=='{') {
+7                size++;
+8                stack.push(ch);
+9            }
+10            else if(size>0 && ch==')' && stack.peek()=='(') {
+11                stack.pop();
+12                size--;
+13            }
+14            else if(size>0 && ch==']' && stack.peek()=='[') {
+15                stack.pop();
+16                size--;
+17            }
+18            else if(size>0 && ch=='}' && stack.peek()=='{') {
+19                stack.pop();
+20                size--;
+21            }
+22            else return false;
+23        }
+24        return size==0;
+25    }
+26}
