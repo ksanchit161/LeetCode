@@ -1,19 +1,16 @@
-1class Solution {
-2    public String maxSumOfSquares(int num, int sum) {
-3        StringBuilder ans=new StringBuilder("");
-4        while(num>0){
-5            if(sum>=9){
-6                ans.append(9);
-7                sum-=9;
-8                num--;
-9            }
-10            else{
-11                ans.append(sum);
-12                sum-=sum;
-13                num--;
-14            }
-15        }
-16        if(sum>0) return "";
-17        else return ans.toString();
-18    }
-19}
+46149
+392702
+159356
+1290783
+33941
+290195
+73052
+657493
+25570
+169727
+180347
+1460810
+151458
+1294965
+151027
+1359250
